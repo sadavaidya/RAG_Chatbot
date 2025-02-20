@@ -1,6 +1,6 @@
-from components.embedding import EmbeddingModel
-from components.retrieval import Retriever
-from components.generation import Generator
+from src.components.embedding import EmbeddingModel
+from src.components.retrieval import Retriever
+from src.components.generation import Generator
 
 class RAGPipeline:
     def __init__(self, documents):

@@ -1,3 +1,6 @@
+import numpy as np
+
+
 class Retriever:
     def __init__(self, embedding_model, top_k=2):
         self.embedding_model = embedding_model
