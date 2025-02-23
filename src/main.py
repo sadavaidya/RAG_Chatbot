@@ -1,8 +1,24 @@
 from src.pipeline.rag_pipeline import RAGPipeline
+from src.components.web_scraper import scrape_news
 
-documents = ["AI is transforming the world.", "LLMs can be fine-tuned for tasks.", "RAG improves chatbot accuracy."]
+# Example news URLs, replace with real URLs
+urls = ["https://www.bbc.com/news", "https://www.bbc.co.uk/news/england"]
+
+# Scrape news from the URLs
+documents = scrape_news(urls)
+
+# Check if news articles are found
+if not documents:
+    raise ValueError("No news articles found from the website")
+
+# Initialize RAG chatbot pipeline with scraped documents
 chatbot = RAGPipeline(documents)
 
-query = "How does RAG help chatbots?"
+# Example query
+query = "What are the latest news updates?"
+
+# Get the response from the chatbot
 response = chatbot.run(query)
+
+# Print chatbot response
 print("Chatbot Response:", response)

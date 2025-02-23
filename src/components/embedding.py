@@ -9,8 +9,12 @@ class EmbeddingModel:
         self.documents = []
 
     def encode_documents(self, documents):
+        if not documents:
+            raise ValueError("No documents provided for encoding")
         self.documents = documents
         embeddings = self.model.encode(documents)
+        if len(embeddings) == 0:
+            raise ValueError("Failed to generate embeddings for documents")
         self.index = faiss.IndexFlatL2(embeddings.shape[1])
         self.index.add(np.array(embeddings))
 

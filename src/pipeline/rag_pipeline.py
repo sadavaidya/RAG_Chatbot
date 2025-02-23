@@ -1,6 +1,7 @@
 from src.components.embedding import EmbeddingModel
 from src.components.retrieval import Retriever
 from src.components.generation import Generator
+from src.components.web_scraper import scrape_news
 
 class RAGPipeline:
     def __init__(self, documents):
