@@ -1,5 +1,15 @@
+import os
+os.environ['PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION'] = 'python'
+
+import torch
+torch.set_num_threads(1)
+
+import streamlit as st
+
+
 from src.pipeline.rag_pipeline import RAGPipeline
 from src.components.web_scraper import scrape_news
+
 
 # Example news URLs, replace with real URLs
 urls = ["https://www.bbc.com/news", "https://www.bbc.co.uk/news/england"]
