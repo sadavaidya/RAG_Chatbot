@@ -57,7 +57,7 @@ pip install -r requirements.txt
 2. **Run the Docker Container**:
 
    ```bash
-   docker run -p 8501:8501 rag_chatbot
+    docker run --gpus all -p 8501:8501 rag_chatbot
    ```
 
    The application will be accessible at `http://localhost:8501`.

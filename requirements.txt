@@ -1,5 +1,5 @@
-torch==1.10.0
-streamlit==1.11.0
+torch
+streamlit==1.19.0
 transformers 
 langchain 
 sentence-transformers 
@@ -7,3 +7,4 @@ faiss-cpu
 chromadb 
 numpy
 bs4
+altair<5

@@ -1,8 +1,11 @@
 from transformers import pipeline
+import torch
 
 class Generator:
     def __init__(self, model_name="gpt2"):
-        self.model = pipeline("text-generation", model=model_name, device=0)  # Ensure it's using GPU if available
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.model = pipeline("text-generation", model=model_name, device=device)
+        #self.model = pipeline("text-generation", model=model_name, device=-1)  # Ensure it's using GPU if available
     
     def generate(self, context, query):
         # Clean and prepare prompt
