@@ -1,11 +1,11 @@
 import streamlit as st
 from src.pipeline.rag_pipeline import RAGPipeline
-from src.components.web_scraper import scrape_news
+from src.components.web_scraper import scrape_articles
 
 # Scrape news documents
 url = ["https://www.bbc.com/news",
        "https://www.bbc.co.uk/news/england"]
-documents = scrape_news(url)
+documents = scrape_articles(url)
 
 if not documents:
     st.error("No news articles found from the website")
